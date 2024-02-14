@@ -1,0 +1,9 @@
+@import '../core/Reset';
+@import '../core/Variables';
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 17px;
+}

@@ -1,0 +1,18 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+  &__btn {
+    margin-bottom: 70px;
+  }
+}

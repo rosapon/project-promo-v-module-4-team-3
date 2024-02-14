@@ -1,0 +1,210 @@
+@import '../core/Reset';
+@import '../core/Variables';
+
+.author {
+  width: 80%;
+  padding: 22px 8px 34px 10px;
+  margin: 0 30px;
+  background-color: $color-white;
+  color: $greyish-brown;
+  transform: translateY(-34px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  height: auto;
+  @media (min-width: 768px) {
+    transform: translateY(-44px);
+    gap: 10px;
+  }
+  &__project {
+    width: 75%;
+    margin: 0 12px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      margin-right: 25px;
+      width: 60%;
+    }
+    &--subtitle {
+      position: absolute;
+      top: 20px;
+      left: 40%;
+      padding: 2px;
+      background-color: white;
+      font-size: 0.8rem;
+      // text-align: center;
+      font-family: $font-family-poppins;
+      left: 55%;
+      @media (min-width: 768px) {
+        font-size: 1rem;
+        top: 30px;
+      }
+    }
+    &--line {
+      position: relative;
+      z-index: -2;
+      width: 100%;
+      border: 0;
+      margin-top: 10px;
+      height: 2px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(1, 1, 1, 0.75),
+        rgba(255, 255, 255, 0)
+      );
+      transform: translateY(-5px);
+      @media (min-width: 768px) {
+        margin-top: 20px;
+      }
+    }
+    &--title {
+      word-wrap: break-word;
+      font-size: 1.4rem;
+      width: 100%;
+      color: $color-black;
+      font-family: $font-family-poppins;
+      margin-bottom: 5px;
+      margin-top: 12px;
+      @media (min-width: 768px) {
+        font-size: 2.4rem;
+        line-height: 40px;
+        margin-top: 30px;
+        width: 220px;
+      }
+    }
+    &--slogan {
+      width: 100%;
+      word-wrap: break-word;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      color: $greyish-brown-Two;
+      font-family: $font-family-poppins;
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+        transform: translateY(-55px);
+        margin-bottom: 0;
+      }
+    }
+    &--description {
+      font-size: 0.8rem;
+      font-family: $font-family-poppins;
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+    &--desc {
+      width: 100%;
+      overflow-wrap: break-word;
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+      line-height: 14.1px;
+      @media (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 17.6px;
+      }
+    }
+  }
+  &__technologies {
+    color: $greyish-brown;
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 768px) {
+      text-align: center;
+      padding-top: 6px;
+      margin: 20px 0 34px 10px;
+    }
+    &--text {
+      word-wrap: break-word;
+      width: 80%;
+      font-size: 1rem;
+      @media (min-width: 768px) {
+        background-color: rgba(0, 0, 0, 0.05);
+        font-size: 1.2rem;
+        padding: 5px;
+        border-radius: 12px;
+      }
+    }
+    &--icon i {
+      font-size: 1rem;
+      margin: 1px;
+      padding: 0.5px;
+      color: black;
+      box-shadow: 1px 2px 2px grey;
+      border-radius: 100px;
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  &__info {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7px;
+    margin-top: 20px;
+    text-align: center;
+    height: auto;
+
+    &--image {
+      width: 100%;
+      border-radius: 50%;
+    }
+    &--job {
+      width: 100%;
+      word-wrap: break-word;
+      max-height: 30px;
+      color: $warm-grey;
+      font-size: 1rem;
+      @media (min-width: 768px) {
+        font-size: 1.4rem;
+        max-height: none;
+        min-width: 100%;
+        margin-top: 10px;
+      }
+    }
+    &--name {
+      width: 100%;
+      word-wrap: break-word;
+      max-height: 50px;
+      font-size: 1.4rem;
+      color: $color-black;
+      @media (min-width: 768px) {
+        font-size: 1.8rem;
+        font-family: $font-family-catamaran;
+        font-weight: bold;
+        max-height: none;
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+.preview {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    max-width: 50%;
+    margin-left: 70px;
+  }
+}
+.imagePreview {
+  padding: 0 20px;
+  height: 307px;
+  object-fit: cover;
+  width: 100%;
+  @media (min-width: 768px) {
+    box-shadow: 2px 5px 5px rgba(1, 1, 1, 0.5);
+    padding: 0 0;
+    width: 90%;
+    height: 60%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
