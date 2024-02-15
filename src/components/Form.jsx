@@ -76,7 +76,7 @@ function Form({
           placeholder="Descripción"
           name="desc"
           id="desc"
-          data={data.desc}
+          value={data.desc}
         ></textarea>
         <span className="autorForm__error">{errorMsg.desc}</span>
       </fieldset>
@@ -102,12 +102,12 @@ function Form({
           <GetAvatar
             updateAvatar={handleChange}
             text="Subir foto de proyecto"
-            id="photo"
+            id="image"
           />
           <GetAvatar
             updateAvatar={handleChange}
             text="Subir foto de autora"
-            id="image"
+            id="photo"
           />
         </div>
         <div className="buttons-img__errorMsg">
