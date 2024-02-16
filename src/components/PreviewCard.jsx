@@ -18,7 +18,7 @@ function PreviewCard({ data }) {
 
   return (
     <section className="preview">
-      <img className="imagePreview" src={photo || project} alt={slogan || ''} />
+      <img className="imagePreview" src={image || project} alt={slogan || ''} />
 
       <section className="author">
         <section className="author__project">
@@ -54,7 +54,7 @@ function PreviewCard({ data }) {
         <section className="author__info">
           <img
             className="author__info--image"
-            src={image || user}
+            src={photo || user}
             alt={autor || ''}
           />
           <p className="author__info--job">{job || 'Full Stack Developer'}</p>

@@ -100,8 +100,10 @@ function App() {
       autor: '',
       job: '',
     });
-    local.clear()
-    setErrorMsg({})
+    local.clear();
+    setErrorMsg({});
+    setUrlCard('');
+    setValidation('');
   };
 
   //Esta función solo se ejecuta cuando todos los campos están completos, es la que genera el enlace y nos pone el mensaje de tarjeta creada
