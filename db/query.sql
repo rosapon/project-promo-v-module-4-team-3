@@ -37,3 +37,19 @@ DELETE FROM projects WHERE idProject>=5;
 
 INSERT INTO projects (name, slogan, technologies, repo, demo, `desc`, image) 
 VALUES ("Buscador de Harry Potter","A tope con Harry Potter","Reactjs, SASS, HTML5","https://github.com/Adalab/modulo-3-evaluacion-final-rosapon","https://beta.adalab.es/modulo-3-evaluacion-final-rosapon/","Si un personaje de Harry Potter quieres encontrar, mi web tendrás que usar","https://files.slack.com/files-tmb/T2Q8FS5QB-F06KBQGE96V-afc61faf4a/image_720.png");
+
+-- Relaciones proyecto-autor
+UPDATE projects
+SET fk_idAuthors = 1
+WHERE idProject = 1;
+
+UPDATE projects
+SET fk_idAuthors = idProject;
+
+
+SELECT authors.name, projects.name
+FROM authors, projects
+WHERE authors.idAuthor = projects.fk_idAuthors;
+
+SELECT * FROM authors, projects WHERE authors.idAuthor = projects.fk_idAuthors;
+
