@@ -14,6 +14,7 @@ function CardPorject({ data }) {
     photo,
     image,
   } = data;
+
   return (
     <section className="author">
       <section className="author__project">

@@ -2,7 +2,14 @@ import Button from './Button';
 import CardProject from './CardProject';
 import '../scss/layout/Landing.scss';
 
-function Landing({ data }) {
+function Landing({ project }) {
+
+  const renderProjectCards = project.map((data, i) => {
+
+    return <CardProject data={data} key={i} />
+
+  })
+
   return (
     <div className="landing">
       <Button
@@ -10,8 +17,7 @@ function Landing({ data }) {
         text="Nuevo proyecto"
         style="header__title--new-btn landing__btn"
       />
-      <CardProject data={data} />
-      <CardProject data={data} />
+      {renderProjectCards}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import local from '../services/localStorage';
 import Landing from './Landing';
 import { Route, Routes } from 'react-router-dom';
 
+
 function App() {
   //Aquí estoy diciendo que me rellene el data con lo que hay en el localStorage y si no hay nada, que me devuelva el valor por defecto que son ''.
   const [data, setData] = useState(
@@ -26,6 +27,8 @@ function App() {
   const [urlCard, setUrlCard] = useState('');
   const [errorMsg, setErrorMsg] = useState({});
 
+  const [project, setProject] = useState([]);
+
   const dataForm = (key, value) => {
     setData({ ...data, [key]: value });
   };
@@ -33,6 +36,19 @@ function App() {
   useEffect(() => {
     local.set('dataProject', data);
   }, [data]);
+
+
+  useEffect(() => {
+    fetch("http://localhost:5001/projects/list")
+      .then(response => response.json())
+      .then(data => {
+        setProject(data.data);
+      });
+
+    console.log(project)
+  }, [])
+
+
 
   //Esta función es la que valida cada input y guarda en un objeto el mensaje de error según la propiedad del input.
   const validateForm = () => {
@@ -78,6 +94,8 @@ function App() {
     //Object.keys devuelve un array con las propiedad del objeto, al ponerle el .length nos devuelve la cantidad de elementos (mensaje de error) que hay en el array, si es = 0 es true, por lo que no hay ningún mensaje de eror dentro
     return Object.keys(errors).length === 0;
   };
+
+
 
   //Esta función maneja la de validación y contiene la condición, si la validación es buena (no hay error, el return en la función de arriba nos ha devuelto true), ejecuta la función handleCreate, sino, omstrará en pantalla el mensaje de ha habido algún error
   const handleSubmit = () => {
@@ -125,7 +143,7 @@ function App() {
     <div className="container">
       <Header />
       <Routes>
-        <Route path="/" element={<Landing data={data} />} />
+        <Route path="/" element={<Landing project={project} data={data} />} /> {/*lo de data será para un nuevo proyecto */}
         <Route
           path="/newProject"
           element={
