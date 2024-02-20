@@ -8,7 +8,7 @@ const server = express();
 
 //configurar cors para que acepte peticiones de todo tipo
 server.use(cors());
-
+server.use(express.json({ limit: "25mb" }));
 
 //crear conexión con los datos de freeDb
 async function getConnection() {

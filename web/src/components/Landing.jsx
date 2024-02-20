@@ -6,7 +6,7 @@ function Landing({ project }) {
 
   const renderProjectCards = project.map((data, i) => {
 
-    return <CardProject data={data} key={i} />
+    return <CardProject data={data} key={i} className="cardStyle" />
 
   })
 
@@ -17,7 +17,10 @@ function Landing({ project }) {
         text="Nuevo proyecto"
         style="header__title--new-btn landing__btn"
       />
-      {renderProjectCards}
+      <div className="landing__cards">
+        {renderProjectCards}
+      </div>
+
     </div>
   );
 }

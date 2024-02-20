@@ -9,10 +9,9 @@ function CardPorject({ data }) {
     repo,
     demo,
     desc,
-    autor,
+    nameAuthor,
     job,
-    photo,
-    image,
+    imageAuthor
   } = data;
 
   return (
@@ -50,11 +49,11 @@ function CardPorject({ data }) {
       <section className="author__info">
         <img
           className="author__info--image"
-          src={photo || user}
-          alt={autor || ''}
+          src={imageAuthor || user}
+          alt={nameAuthor || ''}
         />
         <p className="author__info--job">{job || 'Full Stack Developer'}</p>
-        <p className="author__info--name">{autor || 'Emmelie Björklund'}</p>
+        <p className="author__info--name">{nameAuthor || 'Emmelie Björklund'}</p>
       </section>
     </section>
   );
