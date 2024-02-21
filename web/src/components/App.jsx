@@ -137,7 +137,7 @@ function App() {
     <div className="container">
       <Header />
       <Routes>
-        <Route path="/" element={<Landing project={project} data={data} />} />{' '}
+        <Route path="/" element={<Landing project={project} data={data} />} />
         {/*lo de data será para un nuevo proyecto */}
         <Route
           path="/newProject"

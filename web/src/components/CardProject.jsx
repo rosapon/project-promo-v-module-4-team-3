@@ -11,7 +11,7 @@ function CardPorject({ data }) {
     desc,
     nameAuthor,
     job,
-    imageAuthor
+    imageAuthor,
   } = data;
 
   return (
@@ -53,7 +53,9 @@ function CardPorject({ data }) {
           alt={nameAuthor || ''}
         />
         <p className="author__info--job">{job || 'Full Stack Developer'}</p>
-        <p className="author__info--name">{nameAuthor || 'Emmelie Björklund'}</p>
+        <p className="author__info--name">
+          {nameAuthor || 'Emmelie Björklund'}
+        </p>
       </section>
     </section>
   );
