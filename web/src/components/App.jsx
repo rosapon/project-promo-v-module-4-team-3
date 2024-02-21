@@ -8,7 +8,6 @@ import local from '../services/localStorage';
 import Landing from './Landing';
 import { Route, Routes } from 'react-router-dom';
 
-
 function App() {
   //Aquí estoy diciendo que me rellene el data con lo que hay en el localStorage y si no hay nada, que me devuelva el valor por defecto que son ''.
   const [data, setData] = useState(
@@ -37,18 +36,15 @@ function App() {
     local.set('dataProject', data);
   }, [data]);
 
-
   useEffect(() => {
-    fetch("http://localhost:5001/projects/list")
-      .then(response => response.json())
-      .then(data => {
+    fetch('http://localhost:5001/projects/list')
+      .then((response) => response.json())
+      .then((data) => {
         setProject(data.data);
       });
 
-    console.log(project)
-  }, [])
-
-
+    console.log(project);
+  }, []);
 
   //Esta función es la que valida cada input y guarda en un objeto el mensaje de error según la propiedad del input.
   const validateForm = () => {
@@ -95,8 +91,6 @@ function App() {
     return Object.keys(errors).length === 0;
   };
 
-
-
   //Esta función maneja la de validación y contiene la condición, si la validación es buena (no hay error, el return en la función de arriba nos ha devuelto true), ejecuta la función handleCreate, sino, omstrará en pantalla el mensaje de ha habido algún error
   const handleSubmit = () => {
     if (validateForm()) {
@@ -126,7 +120,7 @@ function App() {
 
   //Esta función solo se ejecuta cuando todos los campos están completos, es la que genera el enlace y nos pone el mensaje de tarjeta creada
   const handleCreateCard = () => {
-    fetch('https://dev.adalab.es/api/projectCard', {
+    fetch('https://localhost:5001/projects/addProjects', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'Content-type': 'application/json' },
@@ -143,7 +137,8 @@ function App() {
     <div className="container">
       <Header />
       <Routes>
-        <Route path="/" element={<Landing project={project} data={data} />} /> {/*lo de data será para un nuevo proyecto */}
+        <Route path="/" element={<Landing project={project} data={data} />} />{' '}
+        {/*lo de data será para un nuevo proyecto */}
         <Route
           path="/newProject"
           element={
