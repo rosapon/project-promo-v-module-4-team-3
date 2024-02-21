@@ -28,7 +28,7 @@ server.listen(port, () => {
 });
 
 //static server
-const statictServer = './web/dist';
+const statictServer = './src/public-react';
 server.use(express.static(statictServer));
 
 //crear ENDPOINT
