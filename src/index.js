@@ -102,3 +102,8 @@ QUERY EJECUTA :
 })
 
 
+
+const staticStyle = "./src/public-css";
+
+//RUTA DE ESTATICOS
+server.use(express.static(staticStyle));
