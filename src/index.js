@@ -8,6 +8,7 @@ const server = express();
 //configurar cors para que acepte peticiones de todo tipo
 server.use(cors());
 server.use(express.json({ limit: '25mb' }));
+server.set("view engine", "ejs");
 
 //crear conexión con los datos de freeDb
 async function getConnection() {
@@ -33,6 +34,7 @@ server.use(express.static(statictServer));
 
 //crear ENDPOINT
 
+//
 server.get('/projects/list', async (req, res) => {
   const connect = await getConnection();
   const sql =
@@ -42,6 +44,7 @@ server.get('/projects/list', async (req, res) => {
   res.json({ success: true, data: results });
 });
 
+//
 server.post('/projects/addProjects', async (req, res) => {
   const connect = await getConnection();
   const insertAuthor =
@@ -70,3 +73,29 @@ server.post('/projects/addProjects', async (req, res) => {
     cardURL: `http://localhost:5001/detail/${resultsProject.insertId}`,
   });
 });
+
+//
+server.get("/detail/:idProject", async (req, res) => {
+
+  const { idProject } = req.params; //req.params sería la forma de recoger el id del proyecto, que viene a través de la URL (poner el nombre de la propiedad de la base de datos)
+
+  //conectamos con la BD
+  const connect = await getConnection();
+
+  //hacemos el select para realizar la consulta a la BD
+
+  const selectProject = 'SELECT * FROM authors, projects WHERE authors.idAuthor = projects.fk_idAuthors and idProject = ?'; // ?  representa al idProyect de la linea 80
+
+  const [resultProject] = await connect.query(selectProject, [idProject])
+  {/* TRADUCCIÓN LINEA 89:
+
+CONNECT CONECTA CON LA BS
+QUERY EJECUTA :
+///selectProyect que es la sentencia en naranja
+/// [idProject] representa a la ?
+
+*/}
+  res.render("detail")
+})
+
+
