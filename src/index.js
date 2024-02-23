@@ -86,7 +86,7 @@ server.get("/detail/:idProject", async (req, res) => {
 
   const selectProject = 'SELECT * FROM authors, projects WHERE authors.idAuthor = projects.fk_idAuthors and idProject = ?'; // ?  representa al idProyect de la linea 80
 
-  const [resultProject] = await connect.query(selectProject, [idProject])
+  const [resultProject] = await connect.query(selectProject, [idProject]);
   {/* TRADUCCIÓN LINEA 89:
 
 CONNECT CONECTA CON LA BS
@@ -95,7 +95,10 @@ QUERY EJECUTA :
 /// [idProject] representa a la ?
 
 */}
-  res.render("detail")
+
+  console.log("JEJEJE", resultProject)
+  res.render("detail", { project: resultProject[0] });
+
 })
 
 
