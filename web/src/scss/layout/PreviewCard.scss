@@ -4,17 +4,18 @@
 .author {
   width: 95%;
   padding: 22px 8px 34px 10px;
-  margin: 0 30px;
+  margin: auto;
   background-color: $color-white;
   color: $greyish-brown;
   transform: translateY(-34px);
   border-radius: 20px;
   display: flex;
   flex-direction: row-reverse;
-  height: auto;
+  height: 230px;
 
   @media (min-width: 768px) {
     transform: translateY(-44px);
+    height: 400px;
     gap: 10px;
   }
 
