@@ -1,14 +1,17 @@
 .landing {
   display: flex;
   flex-direction: column;
-
+  position: relative;
+  top: 8vh;
   gap: 50px;
   align-items: center;
   width: 90%;
+  
 
   @media (min-width: 768px) {
     width: 80%;
     display: flex;
+    top: 45vh;
 
   }
 
@@ -16,9 +19,9 @@
     width: 50%;
   }
 
-  &__btn {
+ /*  &__btn {
     margin-bottom: 70px;
-  }
+  } */
 
 
   &__cards {

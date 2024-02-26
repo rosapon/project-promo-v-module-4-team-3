@@ -1,4 +1,3 @@
-import logoAdalab from '../images/logo-adalab.png';
 import '../scss/layout/Header.scss';
 import Button from './Button';
 
@@ -10,14 +9,11 @@ function Header() {
           <i className="fa-solid fa-laptop-code"></i>
           <p className="text">Proyectos Molones</p>
         </div>
-        <a
-          href="https://www.adalab.es/"
-          className="header__nav--logo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={logoAdalab} alt="adalab" />
-        </a>
+        <Button
+        url="/newProject"
+        text="Añadir proyecto"
+        style="header__title--new-btn landing__btn"
+      />
       </nav>
 
       <div className="header__title">
@@ -25,10 +21,6 @@ function Header() {
         <h2>
           Escaparate en línea para recoger ideas a través de la tecnología
         </h2>
-        {/* <a className="header__title--new-btn" href=''>Nuevo proyecto</a> */}
-        {/* <a className="header__title--see-btn" href="">
-          Ver proyectos
-        </a> */}
       </div>
     </header>
   );
