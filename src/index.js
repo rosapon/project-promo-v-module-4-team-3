@@ -70,7 +70,7 @@ server.post('/projects/addProjects', async (req, res) => {
   connect.end();
   res.json({
     success: true,
-    cardURL: `http://localhost:5001/detail/${resultsProject.insertId}`,
+    cardURL: `https://project-promo-v-module-4-team-3.onrender.com/detail/${resultsProject.insertId}`,
   });
 });
 
