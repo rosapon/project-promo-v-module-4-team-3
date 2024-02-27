@@ -23,7 +23,7 @@ async function getConnection() {
 }
 
 //por qué puerto va a escuchar las peticiones
-const port = 5001;
+const port = process.env.PORT|| 5001;
 server.listen(port, () => {
   console.log(`El servidor se está ejecutando en el puerto ${port}`);
 });
