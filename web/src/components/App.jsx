@@ -7,6 +7,8 @@ import Footer from './Footer';
 import local from '../services/localStorage';
 import Landing from './Landing';
 import { Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import Register from './Register';
 
 function App() {
   //Aquí estoy diciendo que me rellene el data con lo que hay en el localStorage y si no hay nada, que me devuelva el valor por defecto que son ''.
@@ -135,22 +137,50 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
       <Routes>
-        <Route path="/" element={<Landing project={project} data={data} />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Header text="Proyectos Molones" />
+              <Landing project={project} data={data} />
+            </>
+          }
+        />
         {/*lo de data será para un nuevo proyecto */}
+        <Route
+          path="/login"
+          element={
+            <>
+              <Header text="Volver al inicio" />
+              <Login />
+            </>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <>
+              <Header text="Volver al inicio" />
+              <Register />
+            </>
+          }
+        />
         <Route
           path="/newProject"
           element={
-            <Main
-              data={data}
-              handleChange={dataForm}
-              validation={validation}
-              urlCard={urlCard}
-              handleCreateCard={handleSubmit}
-              errorMsg={errorMsg}
-              handleReset={handleReset}
-            />
+            <>
+              <Header text="Volver al inicio" />
+              <Main
+                data={data}
+                handleChange={dataForm}
+                validation={validation}
+                urlCard={urlCard}
+                handleCreateCard={handleSubmit}
+                errorMsg={errorMsg}
+                handleReset={handleReset}
+              />
+            </>
           }
         />
       </Routes>

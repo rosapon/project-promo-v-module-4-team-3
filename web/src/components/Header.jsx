@@ -1,19 +1,22 @@
+import { Link } from 'react-router-dom';
 import '../scss/layout/Header.scss';
-import Button from './Button';
 
-function Header() {
+function Header({ text }) {
   return (
     <header className="header">
       <nav className="header__nav">
         <div className="header__nav--div">
           <i className="fa-solid fa-laptop-code"></i>
-          <p className="text">Proyectos Molones</p>
+          <p className="text">{text}</p>
         </div>
-        <Button
-        url="/newProject"
-        text="Añadir proyecto"
-        style="header__title--new-btn landing__btn"
-      />
+        <div className="header__nav--login">
+          <Link to="/login">
+            <button className="loginBtn">Iniciar sesión</button>
+          </Link>
+          <Link to="/register">
+            <button className="loginBtn">Regístrate</button>
+          </Link>
+        </div>
       </nav>
 
       <div className="header__title">
