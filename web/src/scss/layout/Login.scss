@@ -1,0 +1,53 @@
+@import '../core/Reset';
+@import '../core/Variables';
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 50px 0;
+
+  &__form {
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    gap: 10px;
+    font-size: 2rem;
+    border-radius: 20px;
+    @media (min-width: 768px) {
+      width: 40%;
+    }
+    h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    input {
+      background-color: $color-white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.4rem;
+      border-radius: 1rem;
+      color: $color-dusk;
+      box-shadow: 0 0.4rem #dfd9d9;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    &--login {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: $color-white;
+      color: $color-dusk;
+      border-radius: 20px;
+      border: none;
+      width: 100px;
+      padding: 5px 10px;
+      align-self: center;
+    }
+  }
+}

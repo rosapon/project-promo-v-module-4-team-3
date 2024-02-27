@@ -1,42 +1,35 @@
 .landing {
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 8vh;
+  // position: relative;
+  // top: 8vh;
   gap: 50px;
   align-items: center;
   width: 90%;
-  
 
   @media (min-width: 768px) {
     width: 80%;
     display: flex;
     top: 45vh;
-
   }
 
   @media (min-width: 1024px) {
     width: 50%;
   }
 
- /*  &__btn {
+  /*  &__btn {
     margin-bottom: 70px;
   } */
 
-
   &__cards {
-
     display: grid;
 
     grid-row-gap: 20px;
     justify-items: center;
 
-
     @media (min-width: 1024px) {
-
       grid-template-columns: repeat(2, 500px);
       grid-column-gap: 0px;
-
     }
   }
 }
