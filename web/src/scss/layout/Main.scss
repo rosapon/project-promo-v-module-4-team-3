@@ -1,13 +1,16 @@
 .mainSection {
   position: relative;
   margin-top: 150px;
+
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     max-width: 100%;
+    align-items: stretch;
   }
 }
+
 .mainBtn {
   display: flex;
   flex-direction: column;
