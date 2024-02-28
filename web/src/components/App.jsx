@@ -39,7 +39,7 @@ function App() {
   }, [data]);
 
   useEffect(() => {
-    fetch('http://localhost:5001/projects/list')
+    fetch('https://project-promo-v-module-4-team-3.onrender.com/projects/list')
       .then((response) => response.json())
       .then((data) => {
         setProject(data.data);
@@ -122,7 +122,7 @@ function App() {
 
   //Esta función solo se ejecuta cuando todos los campos están completos, es la que genera el enlace y nos pone el mensaje de tarjeta creada
   const handleCreateCard = () => {
-    fetch('https://localhost:5001/projects/addProjects', {
+    fetch('https://project-promo-v-module-4-team-3.onrender.com/projects/addProjects', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: { 'Content-type': 'application/json' },
