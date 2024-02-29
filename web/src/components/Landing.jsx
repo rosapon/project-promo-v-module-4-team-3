@@ -1,13 +1,17 @@
 import CardProject from './CardProject';
 import Button from './Button';
 import '../scss/layout/Landing.scss';
+import { Link } from 'react-router-dom';
 
 function Landing({ project }) {
   const renderProjectCards = project.map((data, i) => {
     return (
-      <a href={`http://localhost:5001/detail/${data.idProject}`}>
-        <CardProject data={data} key={i} className="cardStyle" />
-      </a>
+      <Link
+        to={`https://project-promo-v-module-4-team-3.onrender.com/detail/${data.idProject}`}
+        key={i}
+      >
+        <CardProject data={data} className="cardStyle" />
+      </Link>
     );
   });
 

@@ -17,4 +17,7 @@
   justify-content: center;
   gap: 30px;
   max-width: 100%;
+  @media (min-width: 768px) {
+    margin-top: 250px;
+  }
 }

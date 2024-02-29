@@ -8,6 +8,9 @@
   width: 100vw;
   height: 100vh;
   margin: 50px 0;
+  @media (min-width: 768px) {
+    margin-top: 250px;
+  }
   &__form {
     padding: 50px;
     color: white;

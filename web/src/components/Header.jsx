@@ -5,10 +5,11 @@ function Header({ text }) {
   return (
     <header className="header">
       <nav className="header__nav">
-        <div className="header__nav--div">
+        <Link to="/" className="header__nav--div">
           <i className="fa-solid fa-laptop-code"></i>
           <p className="text">{text}</p>
-        </div>
+        </Link>
+
         <div className="header__nav--login">
           <Link to="/login">
             <button className="loginBtn">Iniciar sesión</button>
