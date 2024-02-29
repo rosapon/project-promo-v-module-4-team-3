@@ -1,4 +1,3 @@
-import project from '../images/cover.jpeg';
 import user from '../images/user.svg';
 
 function CardPorject({ data }) {
@@ -19,9 +18,13 @@ function CardPorject({ data }) {
       <section className="author__project">
         <p className="author__project--subtitle">Personal Project Card</p>
         <hr className="author__project--line" />
-        <h2 className="author__project--title">
-          {name || 'Elegant Workspace'}
-        </h2>
+        <a
+          href={`https://project-promo-v-module-4-team-3.onrender.com/detail/${data.idProject}`}
+        >
+          <h2 className="author__project--title">
+            {name || 'Elegant Workspace'}
+          </h2>
+        </a>
         <p className="author__project--slogan">
           {slogan || 'Diseños Exclusivos'}
         </p>
